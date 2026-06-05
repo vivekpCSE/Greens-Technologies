@@ -1,0 +1,126 @@
+QUESTION 1
+public class A {
+
+    public A() {
+        this("JAVA");
+        System.out.println("Default const...");
+    }
+
+    public A(int id) {
+        this(3456.5678f);
+        System.out.println(id);
+    }
+
+    public A(String name) {
+        this(12);
+        System.out.println(name);
+    }
+
+    public A(float sal) {
+        System.out.println(sal);
+    }
+
+    public static void main(String[] args) {
+        A a = new A();
+    }
+}
+OUTPUT
+3456.5679
+12
+JAVA
+Default const...
+
+
+QUESTION 2
+package org.test;
+
+class B {
+
+    public B() {
+        System.out.println("Super class");
+    }
+}
+
+public class A extends B {
+
+    public A() {
+        System.out.println("Default const...");
+    }
+
+    public static void main(String[] args) {
+        A a = new A();
+    }
+}
+OUTPUT
+Super class
+Default const...
+
+
+
+QUESTION 3
+
+package org.test;
+
+class B {
+
+    public B() {
+        System.out.println("Super class");
+    }
+
+    public B(int id) {
+        System.out.println(id);
+    }
+}
+
+public class A extends B {
+
+    public A() {
+        System.out.println("Default const...");
+    }
+
+    public static void main(String[] args) {
+        A a = new A();
+    }
+}
+OUTPUT
+Super class
+Default const...
+
+
+
+QUESTION 5
+public A() {
+    super(12);
+    System.out.println("Default const...");
+}
+public B(int id) {
+    System.out.println(id);
+}
+OUTPUT
+Default const...
+
+
+QUESTION 6
+package org.test;
+
+public class A extends B {
+
+    public A() {
+        System.out.println("Default const...");
+    }
+
+    public static void main(String[] args) {
+        A a = new A();
+    }
+}
+package org.test;
+
+public class B {
+
+    public B(int id) {
+        System.out.println(id);
+    }
+}
+OUTPUT
+Implicit super constructor B() is undefined.
+Must explicitly invoke another constructor.
