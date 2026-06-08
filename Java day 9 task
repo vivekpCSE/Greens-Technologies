@@ -1,0 +1,139 @@
+QUESTION1
+try {
+    System.out.print("1");
+    int sum = 9 / 0;   // ArithmeticException
+    System.out.print("2");
+}
+catch (ArithmeticException e) {
+    System.out.print("3");
+}
+catch (Exception e) {
+    System.out.print("4");
+}
+finally {
+    System.out.print("5");
+}
+OUTPUT
+135
+
+
+
+QUESTION2
+m1()
+{
+    m2();
+    print("1");
+}
+
+m2()
+{
+    m3();
+    print("2");
+}
+
+m3()
+{
+    print("3");
+
+    try
+    {
+        int sum = 4/0;   
+        print("4");      
+    }
+    catch(ArithmeticException e)
+    {
+        print("5");
+    }
+
+    print("7");
+}
+OUTPUT
+35721
+
+QUESTION3
+try
+{
+    System.out.print("1");
+    int data = 5 / 0;   
+}
+catch(ArithmeticException e)
+{
+    System.out.print("2");
+    System.exit(0);
+}
+finally
+{
+    System.out.print("3");
+}
+
+System.out.print("4");
+OUTPUT
+12
+
+QUESTION4
+try
+{
+    System.out.print("1");
+    int data = 5 / 0;   
+}
+catch(ArithmeticException e)
+{
+    Throwable obj = new Throwable("Sample");
+
+    try
+    {
+        throw obj;
+    }
+    catch(Throwable e1)
+    {
+        System.out.print("8");
+    }
+    finally
+    {
+        System.out.print("3");
+    }
+}
+
+System.out.print("4");
+OUTPUT
+1834
+
+
+QUESTION5
+import java.io.EOFException;
+import java.io.IOException;
+
+public class Test
+{
+    public static void main(String[] args)
+    {
+        try
+        {
+            System.out.print("1");
+            int value = 10 / 0;
+            throw new IOException();
+        }
+        catch (EOFException e)
+        {
+            System.out.print("2");
+        }
+        catch (ArithmeticException e)
+        {
+            System.out.print("3");
+        }
+        catch (NullPointerException e)
+        {
+            System.out.print("4");
+        }
+        catch (IOException e)
+        {
+            System.out.print("5");
+        }
+        catch (Exception e)
+        {
+            System.out.print("6");
+        }
+    }
+}
+OUTPUT
+13
